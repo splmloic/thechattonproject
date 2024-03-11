@@ -4,9 +4,9 @@ class CartsController < ApplicationController
   end
 
   def show
-    @items = Item.all
-    @item = Item.find(params[:id])
-    @total = item.price * quantity
+    # @items = Item.all
+    # @item = Item.find(params[:id])
+    # @total = item.price * quantity
 
   end
 
