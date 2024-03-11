@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+#user_remember_me::before{
+    top:-.8em !important;
+    left:5.5em !important;
+    display:inline-block !important;
+    width:15px !important;
+    height:16px !important;
+    content:"" !important;
+    border:2px solid #333 !important;
+    border-radius:2px 8px 2px 4px/5px 3px 5px 3px !important;
+}
