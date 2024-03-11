@@ -2,7 +2,8 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  #config.action_mailer.default_url_options = { :host => 'https://eventbritealexisv2-wispy-feather-5111.fly.dev' }
+  #config.action_mailer.default_options = { from: 'brevieralexis@gmail.com' }
   # Code is not reloaded between requests.
   config.enable_reloading = false
 
@@ -72,7 +73,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "thechattonproject_production"
 
   config.action_mailer.perform_caching = false
-
+  
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
