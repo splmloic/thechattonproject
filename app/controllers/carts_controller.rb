@@ -4,9 +4,8 @@ class CartsController < ApplicationController
   end
 
   def show
-    # @items = Item.all
-    # @item = Item.find(params[:id])
-    # @total = item.price * quantity
+    # @cart = current_cart
+    @cart = Cart.find(1)
 
   end
 

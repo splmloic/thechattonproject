@@ -8,27 +8,35 @@
           <div class="list-group">
             <div class="list-group-item">
               <div class="row justify-content-between align-items-center">
-                <div class="col col-md-5">
-                  <div class="d-flex align-items-center">
-                    <p>Image</p>
-                    <p>Nom de la photo</p>
-                  </div>
-                </div>
-                <div class="col col-md-3">
-                  <div class="d-flex align-items-center">
-                    <p>Quantité :</p>
-                    <div class="btn-group-vertical mx-2">
-                      <%= button_to "+", cart_path, method: "edit",class:"btn btn-success btn-sm" %>
-                      <%= button_to "-", cart_path, method: "edit",class:"btn btn-danger btn-sm" %>                      
+                <% @cart.each do |item|%>
+                  <div class="col col-md-5">
+                    <div class="d-flex align-items-center">
+                      <div>
+                        <p><%= item.image_url %></p>
+                      </div>                      
+                      <p><%= item.title %></p>
                     </div>
                   </div>
-                </div>
-                <div class="col col-md-3">
-                  <p>Prix :</p>
-                </div>
-                <div class="col col-md-1">
-                  <%= button_to "x", cart_path, method: "destroy", class:"btn btn-danger btn-sm"%>
-                </div>
+                  <div class="col col-md-3">
+                    <div class="d-flex align-items-center">
+                      <p>Quantité : 1</p>
+                      <!-- 
+                      <div class="btn-group-vertical mx-2">                      
+                        
+                        <%= button_to "+", cart_path, method: "PATCH",class:"btn btn-success btn-sm" %>
+                        <%= button_to "-", cart_path, method: "PATCH",class:"btn btn-danger btn-sm" %>                      
+                        
+                      </div>
+                      -->
+                    </div>
+                  </div>
+                  <div class="col col-md-3">
+                    <p><%= item.price %></p>
+                  </div>
+                  <div class="col col-md-1">
+                    <%= button_to "x", cart_path, method: "DELETE", class:"btn btn-danger btn-sm"%>
+                  </div>
+                <% end%>
               </div>
             </div>
           </div>
