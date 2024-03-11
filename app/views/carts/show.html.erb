@@ -8,7 +8,7 @@
           <div class="list-group">
             <div class="list-group-item">
               <div class="row justify-content-between align-items-center">
-                <% @cart.each do |item|%>
+                <% @cart_items.each do |item|%>
                   <div class="col col-md-5">
                     <div class="d-flex align-items-center">
                       <div>
@@ -31,10 +31,10 @@
                     </div>
                   </div>
                   <div class="col col-md-3">
-                    <p><%= item.price %></p>
+                    <p><%= item.price %>€</p>
                   </div>
                   <div class="col col-md-1">
-                    <%= button_to "x", cart_path, method: "DELETE", class:"btn btn-danger btn-sm"%>
+                    <%= button_to "x", cart_path(item), method: :delete, class:"btn btn-danger btn-sm"%>
                   </div>
                 <% end%>
               </div>
@@ -47,7 +47,7 @@
       <div> <!--/* je créé une boite dans la colonne pour la positionner dans l'aligenement de la boite à gauche */-->
         <div class="card mb-3">
           <div class="card-body text-center">
-            <h4 class="card-title">Total : </h4>          
+            <h4 class="card-title">Total : <%= @total %>€</h4>          
           </div>
         </div>
         <div class="d-grid gap-2"> <!--/* ici j'ai fait button block pour élargir le bouton pour qu'il prenne la meme longeur que le boite du dessus */-->
