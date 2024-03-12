@@ -11,7 +11,7 @@ class CartsController < ApplicationController
     total = 0 #itilize total
     @cart_items.each do |item| #calcul of the sum of the cart
       puts item.price.to_f.inspect
-      total = total + item.price
+      total = total + item.price.to_i
     end
     @total = total
 
