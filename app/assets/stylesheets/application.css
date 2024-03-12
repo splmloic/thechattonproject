@@ -12,5 +12,6 @@
  *
  *= require bootstrap
  *= require main
+ *= require item_index
  *= require devise
  */
