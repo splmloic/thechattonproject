@@ -16,10 +16,7 @@
                     <li><%= link_to "My Profile", user_path(current_user) %></li>
                     <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, data: {turbo_method: :delete} %></li>
                 </ul>
-                <a class="" href="/">
-                  <img class="logo_nav" src="https://e7.pngegg.com/pngimages/96/325/png-clipart-computer-icons-shopping-cart-shopping-cart-angle-logo.png" alt="logo Purrfect">
-                  Panier
-                </a>
+                
             </li>
         <% else %>
             <div class="nav-item dropdown">
@@ -32,6 +29,10 @@
                 </ul>
             </div>
         <% end %>
+        <a class="ms-3" href="/">
+        <%=  image_tag "panier.png", alt: "Description de l'image", class:"logo_nav_panier" %>
+            Panier
+        </a>
     </div>
   </div>
 </nav>
