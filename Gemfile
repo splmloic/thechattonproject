@@ -4,6 +4,7 @@ ruby "3.2.2"
 gem 'devise'
 gem 'table_print'
 gem 'faker'
+gem 'dotenv'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
@@ -68,3 +69,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "dockerfile-rails", ">= 1.6", :group => :development
