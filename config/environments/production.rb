@@ -2,8 +2,21 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  #config.action_mailer.default_url_options = { :host => 'https://eventbritealexisv2-wispy-feather-5111.fly.dev' }
-  #config.action_mailer.default_options = { from: 'brevieralexis@gmail.com' }
+  
+  config.action_mailer.default_url_options = { :host => 'https://thechattonproject.fly.dev' }
+  
+  config.action_mailer.default_options = { from: ENV['MAILJET_DEFAULT_FROM'] }
+  
+  ActionMailer::Base.smtp_settings = {
+    :user_name => ENV['MAILJET_LOGIN'],
+    :password => ENV['MAILJET_PWD'],
+    :domain => 'gmail.com',
+    :address => 'in-v3.mailjet.com',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+
   # Code is not reloaded between requests.
   config.enable_reloading = false
 

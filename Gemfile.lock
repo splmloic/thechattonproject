@@ -273,12 +273,8 @@ DEPENDENCIES
   capybara
   debug
   devise
-<<<<<<< HEAD
-  dotenv-rails
-=======
   dockerfile-rails (>= 1.6)
   dotenv
->>>>>>> dev
   faker
   importmap-rails
   jbuilder
