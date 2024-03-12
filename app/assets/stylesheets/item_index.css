@@ -1,10 +1,6 @@
 .jumbotron{
-  background-image: url(/images/babycat-jumbotron.jpg);
-}
-
-.add-to-cart-box{
-    overflow: hidden;
-    border: 2px solid #333;
-    border-radius: 45px 15px 35px 5px/15px 5px 15px 65px;
-  
+  background-image: url(assets/babycat-jumbotron.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
