@@ -7,4 +7,24 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-User.create(email: 'bob51@yopmail.com', password: 'alexis')
+Item.delete_all
+User.delete_all
+Cart.delete_all
+
+20.times do |count|
+    item = Item.create(
+        title: "chatton #{count + 1}",
+        description: Faker::Lorem.paragraph,
+        price: Faker::Commerce.price(range: 0.01..1.0),
+        image_url: "assets/chatton/#{count + 1}.jpg"
+    )
+end
+
+user = User.create(
+    email: "seed@test.com",
+    password: "azerty"
+)
+
+Cart.create(
+    user: user
+)
