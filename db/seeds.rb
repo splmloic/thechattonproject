@@ -7,6 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+CartItem.delete_all
 Item.delete_all
 User.delete_all
 Cart.delete_all
@@ -16,7 +17,7 @@ Cart.delete_all
         title: "chatton #{count + 1}",
         description: Faker::Lorem.paragraph,
         price: Faker::Commerce.price(range: 0.01..1.0),
-        image_url: "assets/chatton/#{count + 1}.jpg"
+        image_url: "assets/#{count + 1}.jpg"
     )
 end
 
