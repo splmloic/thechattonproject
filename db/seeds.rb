@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Item.delete_all
+
+20.times do |count|
+    item = Item.create(
+        title: "chatton #{count + 1}",
+        description: Faker::Lorem.paragraph,
+        price: rand(10) * 0.1 + 0.1,
+        image_url: "assets/chatton/#{count + 1}.jpg"
+    )
+end
