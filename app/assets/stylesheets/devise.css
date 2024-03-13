@@ -27,6 +27,7 @@ body.devise .field input {
 body.devise .actions {
     text-align: center;
 }
+
 body.devise a {
     display: block;
     text-align: center;
