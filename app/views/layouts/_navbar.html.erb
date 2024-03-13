@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
+  <div class="container-fluid">
+    
+    <a class="navbar-brand" href="#">
+        <%= image_tag "logo.png", size: "30*30", class="d_inline-block align-top"
+        The Chaton Project
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor03">
+      <form class="d-flex">
+        <% if user_signed_in? %>
+        <!-- SHOW THE DROPDOWN ASSOCIATED TO THE CONNECTED USER --> 
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    My Profile
+                </a>
+                <ul class="dropdown-menu">
+                    <li><%= link_to "My Profile", user_path(current_user) %></li>
+                    <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, data: {turbo_method: :delete} %></li>
+                </ul>
+                <a class="navbar-brand" href="#">
+                    <%= image_tag "panier.png", size: "30*30", class="d_inline-block align-top"
+                    Panier
+                </a>
+            </li>
+        <% else %>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Sign In/Sign Up
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/users/sign_in">Sign In</a></li>
+                    <li><a class="dropdown-item" href="/users/sign_up">Sign Up</a></li>
+                </ul>
+            </li>
+        <% end %>
+      </form>
+    </div>
+  </div>
+</nav>
