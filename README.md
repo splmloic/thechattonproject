@@ -28,7 +28,6 @@ test de panier avec :
 lolo@git.io
 abc123
 
-## Le panier ne fonctionne que lorsqu'on est connecté !
-test de panier avec :
-lolo@git.io
-abc123
+Utilisateur généré en seed : 
+email: seed@test.com
+password: azerty
