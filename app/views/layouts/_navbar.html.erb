@@ -8,7 +8,7 @@
     <div class="navbar-nav me-auto"></div>
         <% if user_signed_in? %>
         <!-- SHOW THE DROPDOWN ASSOCIATED TO THE CONNECTED USER --> 
-            <li class="nav-item dropdown">
+            <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     My Profile
                 </a>
@@ -17,7 +17,7 @@
                     <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, data: {turbo_method: :delete} %></li>
                 </ul>
                 
-            </li>
+            </div>
         <% else %>
             <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
