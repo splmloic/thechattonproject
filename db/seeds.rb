@@ -7,7 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-User.create(email: 'bob51@yopmail.com', password: 'alexis')
+
 Item.delete_all
 User.delete_all
 Cart.delete_all
