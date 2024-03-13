@@ -27,3 +27,7 @@ Things you may want to cover:
 test de panier avec :
 lolo@git.io
 abc123
+
+Utilisateur généré en seed : 
+email: seed@test.com
+password: azerty
