@@ -24,11 +24,7 @@
           <% if current_user == @user %>
           <div class="d-flex justify-content-between">
             <%= link_to "Modifier le profil", edit_user_registration_path, class: "btn btn-primary" %>
-            <form class="button_to" method="post" action="/users">
-              <input type="hidden" name="_method" value="delete" autocomplete="off">
-              <button data-confirm="Etes-vous sur ?" data-turbo-confirm="Are you sure?" type="submit" class="btn btn-danger">Supprimer mon compte</button>
-              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" autocomplete="off">
-            </form>
+            
           </div>
           <% end %>
 
