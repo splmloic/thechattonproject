@@ -13,7 +13,7 @@ Item.delete_all
     item = Item.create(
         title: "chatton #{count + 1}",
         description: Faker::Lorem.paragraph,
-        price: rand(10) * 0.1 + 0.1,
+        price: Faker::Commerce.price(range: 0.01..1.0),
         image_url: "assets/chatton/#{count + 1}.jpg"
     )
 end
