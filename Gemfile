@@ -5,7 +5,7 @@ gem 'devise'
 gem 'table_print'
 gem 'faker'
 gem 'dotenv'
-
+gem 'stripe'
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
