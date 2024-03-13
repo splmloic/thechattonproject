@@ -28,13 +28,10 @@ test de panier avec :
 lolo@git.io
 abc123
 
-<<<<<<< HEAD
 Utilisateur généré en seed : 
 email: seed@test.com
 password: azerty
-=======
-## Le panier ne fonctionne que lorsqu'on est connecté !
-test de panier avec : lolo@git.io abc123
 
-Utilisateur généré en seed : email: seed@test.com password: azerty
->>>>>>> dev
+lorsqu'on push dans fly et qu'il y a une erreur de deploiement et que fly demande le secret_key_base :
+> fait un : rails secrets
+> envoyer le code à fly

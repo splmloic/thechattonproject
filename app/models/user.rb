@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  after_create :welcome_send
+  # after_create :welcome_send
+  after_create :create_cart
   
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
@@ -11,5 +12,9 @@ class User < ApplicationRecord
   
   has_one :cart
   has_many :orders
+
+  def create_cart    
+    @cart = Cart.create(user: self)
+  end
 
 end
