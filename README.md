@@ -22,3 +22,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Le panier ne fonctionne que lorsqu'on est connecté !
+test de panier avec :
+lolo@git.io
+abc123
+
+## Le panier ne fonctionne que lorsqu'on est connecté !
+test de panier avec :
+lolo@git.io
+abc123
