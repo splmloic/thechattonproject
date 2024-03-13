@@ -5,9 +5,9 @@ body.devise{
     justify-content: center;
     height: 100vh;
     margin: 0;
-  }
-  
-form{
+}
+
+body.devise form {
     border: 2px solid #333;
     padding: 20px;
     border-radius: 10px;
@@ -15,19 +15,18 @@ form{
     width: 100%;
 }
   
-.field{
+body.devise .field {
     margin-bottom: 15px;
 }
 
-.field label,
-.field input {
-  width: 100%;
+body.devise .field label,
+body.devise .field input {
+    width: 100%;
 }
 
-.actions {
+body.devise .actions {
     text-align: center;
 }
-  
 body.devise a {
     display: block;
     text-align: center;
