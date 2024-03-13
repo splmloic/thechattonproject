@@ -16,7 +16,11 @@
                     <li><%= link_to "My Profile", user_path(current_user) %></li>
                     <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, data: {turbo_method: :delete} %></li>
                 </ul>
-                
+            </div>
+                <a class="ms-3" href="/">
+        <%=  image_tag "panier.png", alt: "Description de l'image", class:"logo_nav_panier" %>
+            Panier
+        </a>
             </div>
         <% else %>
             <div class="nav-item dropdown">
@@ -28,11 +32,10 @@
                     <li><a class="dropdown-item" href="/users/sign_up">Sign Up</a></li>
                 </ul>
             </div>
+
+
         <% end %>
-        <a class="ms-3" href="/">
-        <%=  image_tag "panier.png", alt: "Description de l'image", class:"logo_nav_panier" %>
-            Panier
-        </a>
+        
     </div>
   </div>
 </nav>
