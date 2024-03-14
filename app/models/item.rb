@@ -1,4 +1,7 @@
 class Item < ApplicationRecord
+    extend FriendlyId
+    friendly_id :title, use: :slugged
+
     has_many :order_items
     has_many :orders, through: :order_items
     

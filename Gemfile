@@ -7,6 +7,7 @@ gem 'faker'
 gem 'dotenv-rails'
 gem 'stripe'
 gem 'letter_opener'
+gem 'friendly_id', '~> 5.5.0'
 
 gem 'aws-sdk-s3', '~> 1.143', require: false
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
