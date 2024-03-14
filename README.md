@@ -1,5 +1,9 @@
 # README
 
+# Notre site sur fly.io
+https://thechattonproject.fly.dev/
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
@@ -29,7 +33,7 @@ lolo@git.io
 abc123
 
 Utilisateur généré en seed : 
-email: seed@test.com
+email: seed@yopmail.com
 password: azerty
 
 lorsqu'on push dans fly et qu'il y a une erreur de deploiement et que fly demande le secret_key_base :
