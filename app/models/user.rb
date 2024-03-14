@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  # after_create :welcome_send
+  after_create :welcome_send
   after_create :create_cart
   
   def welcome_send
