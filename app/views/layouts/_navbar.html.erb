@@ -18,10 +18,13 @@
                 </ul>
             </div>
             <% if current_user.cart %>
-                <a class="ms-3" href="<%= cart_path(current_user.cart) %>">
-                    <%=  image_tag "panier.png", alt: "Description de l'image", class:"logo_nav_panier" %>
-                        Panier
-                </a>
+                <div class="d-flex">
+                    <a class="ms-3" href="<%= cart_path(current_user.cart) %>">
+                        <%=  image_tag "panier.png", alt: "Description de l'image", class:"logo_nav_panier" %>
+                            Panier
+                    </a>
+                    <div class="text-info mx-1">x<%= current_user.cart.cart_items.count  %></div>
+                </div>
             <% end %>
             </div>
         <% else %>
