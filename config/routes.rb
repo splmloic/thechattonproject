@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   root "items#index"
   resources :items do
-    resource :logo
+    resource :image
   end
   resources :carts
   
