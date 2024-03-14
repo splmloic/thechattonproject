@@ -4,8 +4,9 @@ ruby "3.2.2"
 gem 'devise'
 gem 'table_print'
 gem 'faker'
-gem 'dotenv'
+gem 'dotenv-rails'
 gem 'stripe'
+gem 'letter_opener'
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
