@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  
+  <body>
+  <h1>Confirmation de Commande. Félicitations !</h1>
+    
+    <p>Merci, <%= @user.email %> , pour votre commande sur notre site.</p>
+    
+    <p>Votre panier a été facturé pour un montant total de : <%= number_to_currency(@total, unit: '€') %>.</p>
+    
+
+      <p> Pour accéder à ton espace client, connecte-toi via : <%= @url %>.</p>
+    
+      <p> À très vite sur thecatproject.fr !<p> 
+  </body>
+</html>

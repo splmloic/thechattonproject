@@ -1,0 +1,9 @@
+Confirmation de Commande. Félicitations !
+
+Merci, <%= @user.email %> , pour votre commande sur notre site.
+
+<p>Votre panier a été facturé pour un montant total de : <%= number_to_currency(@total, unit: '€') %>.</p>
+
+Pour accéder à ton espace client, connecte-toi via : <%= @url %>.
+
+À très vite sur thecatproject.fr !
