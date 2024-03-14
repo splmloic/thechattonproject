@@ -37,42 +37,34 @@
 <div class="container mt-5">
   <h1 class="text-center">Historique d'achat</h1>
   <div class="accordion mt-3" id="accordionExample">
+    <% i = 1 %>
+    <% @orders.each do |order|%>
+    <% i += 1 %>
     <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Order #1
+      <h2 class="accordion-header" id="heading<%= i %>">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= i %>" aria-expanded="true" aria-controls="collapse<%= i %>">
+          Commande id: <%= order.id %><br>
+          Date de commande: <%= order.created_at %>
         </button>
       </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div id="collapse<%= i %>" class="accordion-collapse collapse show" aria-labelledby="heading<%= i %>" data-bs-parent="#accordionExample">
         <div class="accordion-body">
           <div class="col">
             <div class="container mt-5">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="card mb-3">
-                    <div class="card-body">
-                      <h3>Example Item.Title</h3>
-                      <p>Emotion : Fatiguer | Dormir</p>
-                      <p>Item.price: 19.99€</p>
-                      <p>Date: Created_at </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="card mb-3">
-                    <a href="#">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="card-img-top" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
-                        <rect width="100%" height="100%" fill="#868e96"></rect>
-                        <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <div class="card-body">
+                  <% order.items.each do |item| %>
+                    <p>Nom : <%= item.title %></p>
+                    <p>Description : <%= item.description %></p>
+                    <p>Prix : <%= item.price %>€</p>
+                    <p><u>Lien de téléchargement</u></p>
+                    <br>
+                  <% end %>
+              </div>                  
             </div>
           </div>
         </div>
       </div>
     </div>
+    <% end %>
   </div>
 </div>

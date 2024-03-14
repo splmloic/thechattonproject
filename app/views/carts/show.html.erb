@@ -52,7 +52,7 @@
         </div>
         <div class="d-grid gap-2"> <!--/* ici j'ai fait button block pour élargir le bouton pour qu'il prenne la meme longeur que le boite du dessus */-->
           
-          <%= button_to "Passer commande (NEXT GEN)", checkout_create_path(total: @total), class: "btn btn-lg btn-success", data: {turbo: false} %>
+          <%= button_to "Passer commande", checkout_create_path(total: @total, cart_id:@cart.id), class: "btn btn-lg btn-success", data: {turbo: false} %>
         </div>
       </div>
     </div>
