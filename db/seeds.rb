@@ -20,12 +20,13 @@ Cart.delete_all
         image_url: "assets/#{count + 1}.jpg"
     )
 end
-
+puts "I succeed in creating items"
 user = User.create(
-    email: "seed@test.com",
+    email: "seed@yopmail.com",
     password: "azerty"
 )
-
+puts "I succeed in creating the profil"
 Cart.create(
     user: user
 )
+puts "I succeed in creating user's cart"

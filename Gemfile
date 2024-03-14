@@ -4,8 +4,9 @@ ruby "3.2.2"
 gem 'devise'
 gem 'table_print'
 gem 'faker'
-gem 'dotenv'
+gem 'dotenv-rails'
 gem 'stripe'
+gem 'letter_opener'
 
 gem 'friendly_id', '~> 5.5.0'
 

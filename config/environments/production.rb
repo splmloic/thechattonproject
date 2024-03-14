@@ -3,20 +3,7 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   
-  config.action_mailer.default_url_options = { :host => 'https://thechattonproject.fly.dev' }
-  
-  config.action_mailer.default_options = { from: ENV['MAILJET_DEFAULT_FROM'] }
-  
-  ActionMailer::Base.smtp_settings = {
-    :user_name => ENV['MAILJET_LOGIN'],
-    :password => ENV['MAILJET_PWD'],
-    :domain => 'gmail.com',
-    :address => 'in-v3.mailjet.com',
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
-  }
-
+ 
   # Code is not reloaded between requests.
   config.enable_reloading = false
 
@@ -108,4 +95,22 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+
+   
+  # config.action_mailer.default_options = { from: ENV['MAILJET_DEFAULT_FROM'] }
+  
+  ActionMailer::Base.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  
+  ActionMailer::Base.smtp_settings = {
+  :user_name => ENV['MAILJET_LOGIN'],
+  :password => ENV['MAILJET_PWD'],
+  :domain => 'thechattonproject.fly.dev',
+  :address => 'in-v3.mailjet.com',
+  :port => 587,
+  :authentication => :plain,
+  :enable_starttls_auto => true
+  }
+  #dire à Heroku l'URL de mon app est :
+  config.action_mailer.default_url_options = { :host => 'thechattonproject.fly.dev' }
 end
