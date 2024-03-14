@@ -8,25 +8,29 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 CartItem.delete_all
+OrderItem.delete_all
 Item.delete_all
 User.delete_all
 Cart.delete_all
+Order.delete_all
 
 20.times do |count|
     item = Item.create(
-        title: "chatton #{count + 1}",
+        title: "chaton #{count + 1}",
         description: Faker::Lorem.paragraph,
         price: Faker::Commerce.price(range: 0.01..1.0),
-        image_url: "assets/#{count + 1}.jpg"
+        #For production, we call the S3 file
     )
+item.image.attach(
+    Rails.root.join('app','assets','chaton',"#{count + 1}.jpg")
+)
 end
-puts "I succeed in creating items"
+
 user = User.create(
     email: "seed@yopmail.com",
     password: "azerty"
 )
-puts "I succeed in creating the profil"
+
 Cart.create(
     user: user
 )
-puts "I succeed in creating user's cart"
