@@ -4,6 +4,7 @@ class CheckoutController < ApplicationController
     def create
 
       puts "#"*50
+      puts "je suis dans create checkout"
       puts params
       puts "#"*50
           @total = params[:total].to_d
@@ -22,7 +23,8 @@ class CheckoutController < ApplicationController
                     name: 'Rails Stripe Checkout',
                   },
                 },
-                quantity: 1
+                quantity: 1,
+                
               },
               
             ],
@@ -34,12 +36,17 @@ class CheckoutController < ApplicationController
         end
       
         def success
+          puts "#"*50
+          puts "je suis dans success checkout"
+          puts params
+          puts "#"*50
           @session = Stripe::Checkout::Session.retrieve(params[:session_id])
           @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
           @cart_id= @session.metadata.cart_id
-          @cart = Cart.find(@cart_id)          
-          # create_order(@cart)
-          # empty_cart
+          @cart = Cart.find(@cart_id)
+          create_order(@cart)
+          empty_cart
+          
         end
       
         def cancel
@@ -53,14 +60,20 @@ class CheckoutController < ApplicationController
           @order = Order.new(user: @user)          
           @order_item = 0
           @cart_items.each do |cart_item|
-            @order_item = OrderItem.create(order: @order, item: cart_item.item, quantity: cart_item.quantity, price: cart_item.item.price)
+            @order_item = OrderItem.create(order: @order, item: cart_item.item)
           end
           @order_items = @order.order_items
           @order.save
+          puts "$"*10
+          puts "j'ai créé une commande : #{@order}"
+          puts "$"*10
         end
 
         def empty_cart
           current_user.cart.cart_items.destroy_all
+          puts "$"*10
+          puts "j'ai vidé le panier"
+          puts "$"*10
         end
 end
 
