@@ -10,7 +10,7 @@ class CartsController < ApplicationController
     @cart_items = @cart.items
     total = 0 #itilize total
     @cart_items.each do |item| #calcul of the sum of the cart
-      puts item.price.to_f.inspect
+      # puts item.price.to_f.inspect
       total = total + item.price
     end
     @total = total
