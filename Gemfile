@@ -8,7 +8,7 @@ gem 'dotenv-rails'
 gem 'stripe'
 gem 'letter_opener'
 
-
+gem 'aws-sdk-s3', '~> 1.143', require: false
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 
