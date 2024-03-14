@@ -2,7 +2,7 @@ class User < ApplicationRecord
   extend FriendlyId
   friendly_id :email, use: :slugged
   
-  # after_create :welcome_send
+  after_create :welcome_send
   after_create :create_cart
   
   def welcome_send
