@@ -17,10 +17,12 @@
                     <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, data: {turbo_method: :delete} %></li>
                 </ul>
             </div>
-                <a class="ms-3" href="/">
-        <%=  image_tag "panier.png", alt: "Description de l'image", class:"logo_nav_panier" %>
-            Panier
-        </a>
+            <% if current_user.cart %>
+                <a class="ms-3" href="<%= cart_path(current_user.cart) %>">
+                    <%=  image_tag "panier.png", alt: "Description de l'image", class:"logo_nav_panier" %>
+                        Panier
+                </a>
+            <% end %>
             </div>
         <% else %>
             <div class="nav-item dropdown">
