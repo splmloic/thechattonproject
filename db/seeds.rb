@@ -14,10 +14,11 @@ Cart.delete_all
 
 20.times do |count|
     item = Item.create(
-        title: "chatton #{count + 1}",
+        title: "chaton #{count + 1}",
         description: Faker::Lorem.paragraph,
         price: Faker::Commerce.price(range: 0.01..1.0),
-        image_url: "assets/#{count + 1}.jpg"
+        #For production, we call the S3 file
+        image_url: "s3://thechatonproject/chaton/#{count + 1}.jpg"
     )
 end
 
