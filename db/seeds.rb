@@ -18,8 +18,10 @@ Cart.delete_all
         description: Faker::Lorem.paragraph,
         price: Faker::Commerce.price(range: 0.01..1.0),
         #For production, we call the S3 file
-        image_url: "s3://thechatonproject/chaton/#{count + 1}.jpg"
     )
+item.image.attach(
+    Rails.root.join('app','assets','chaton',"#{count + 1}.jpg")
+)
 end
 
 user = User.create(

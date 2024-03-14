@@ -4,8 +4,8 @@
       <div class="card border-primary mb-3">
         <div class="card-body bg-secondary">
           <div class="card-img-top">
-            <p>"<%= @item.image_url %>"</p> 
-            <img src="../<%= @item.image_url %>" style="width: 100%; height: auto; object-fit: contain;" alt="image <%= @item.title %>">
+            <h1 class="text-info"><%= @item.title %></h1>
+              <%= image_tag @item.image, style:"width: 100%; height: auto; object-fit: contain;", alt:"image "+ @item.title %>
           </div>          
         </div>
       </div>
