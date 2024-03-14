@@ -1,9 +1,6 @@
 class CartsController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-
-  end
 
   def show
     @cart = current_user.cart
@@ -14,19 +11,6 @@ class CartsController < ApplicationController
       total = total + item.price
     end
     @total = total
-
-  end
-
-  def new
-
-  end
-
-  def create
-
-  end
-
-  def edit
-
   end
 
   def update
@@ -40,6 +24,7 @@ class CartsController < ApplicationController
     if @cart_items
       @cart_items = CartItem.create(cart:@cart,item:@item)
       flash[:notice] = "L'article a été ajouté au panier avec succès."
+      redirect_to request.referrer
     else
       flash[:alert] = "Nous avons rencontré une erreur, veuillez réessayer ou contacter notre équipe si l'erreur persiste."
     end
@@ -58,6 +43,7 @@ class CartsController < ApplicationController
     @cart_item = @cart.cart_items.find_by(item_id: @item.id)
     puts @cart_item.inspect
     @cart_item.destroy
+    flash[:alert] = "Un objet a été supprimé du panier"
     redirect_to cart_path
   end
 
